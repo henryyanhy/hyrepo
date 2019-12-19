@@ -1,21 +1,40 @@
-<!-- Welcome to some sample code to control your Firebase Database -->
-<!-- HERE IS YOUR HTML TO SET UP YOUR PAGE -->
 <html>
+
     <head>
-        <!-- HERE ARE YOUR FIREBASE and GOOGLE AUTHENICATION IMPORTS -->
+        
         <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-            <!-- Compiled and minified CSS -->
+        
+        <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </head>
-    <body >
         
-  <nav>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <style>
+        
+            .nav-wrapper {
+                background-color: darkred;
+            }
+            
+            .page-footer {
+                background-color: darkred;
+            }
+
+        </style>
+
+    </head>
+
+    <!-- body is what user sees -->
+    <body>
+    
+    <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+    <div class="container"> 
+      <a href="#!" class="brand-logo"><i class="material-icons">account_circle</i><span class="new badge">69</span>Tourguider</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html"><i class="material-icons">search</i></a></li>
         <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
@@ -23,39 +42,149 @@
         <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
       </ul>
     </div>
+    </div>    
   </nav>
-        
-            <h1 id="uid"></h1>
-    
-          <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <img src="HERNY.jpg">
-          <span class="card-title">HENRY</span>
-        </div>
-        <div class="card-content">
-          <p>This is Henry.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">HENRY YAN</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
-            <button onclick="signin()">Sign in</button>
-            <button onclick="getData()">Get data</button>
-            <button onclick="setData()">Set data</button>
-            <button onclick="updateData()">Update data</button>
-            <button onclick="pushData()">Push data</button>
-            <button onclick="removeData()">Remove data</button>
-            <div id="info"></div>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Search<i class="material-icons">search</i></a></li>
+    <li><a href="badges.html">Browse<i class="material-icons">view_module</i></a></li>
+    <li><a href="collapsible.html">Refresh<i class="material-icons">refresh</i></a></li>
+    <li><a href="mobile.html">More<i class="material-icons">more_vert</i></a></li>
+  </ul>
+
+        <div class="row">
+            <div class="col s12 m6 l12">
+            <div class="card-panel hoverable">
+              <div class="card grey">
+                <div class="card-content white-text">
+                  <span class="card-title">Tourguider</span>
+                  <p>Can't decide where to go for the next holiday? This is the only website you'll ever need! Tourguider provides detailed descriptions of the best tourist-attractions in the world, as well as the latest recommendations for this season.</p>
+                </div>
+                <div class="card-action">
+                  <button onclick="signin()">Sign in</button>
+                  <button onclick="getData()">Get data</button>
+                  <div id="stuff"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+        
+    <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="Santorini.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="Indonesia.jpg"></a>
+        <a class="carousel-item" href="#three!"><img src="Venice.jpg"></a>
+        <a class="carousel-item" href="#four!"><img src="Guilin.jpg"></a>
+        <a class="carousel-item" href="#five!"><img src="Machubichu.jpg"></a>
+    </div>
+        
+        <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card">
+            <div class="card-panel hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="BJ.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">China<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">Find out more</a></p>
+                </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">China<i class="material-icons right">close</i></span>
+              <p>Brief information about China that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+
+            <div class="col s12 m6 l6">
+          <div class="card">
+            <div class="card-panel hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="Paris.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">France<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">Find out more</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">France<i class="material-icons right">close</i></span>
+              <p>Brief information about France that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        
+        <div class="row">
+        <div class="col s12 m6 l6">
+          <div class="card">
+            <div class="card-panel hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="Switzerland.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Switzerland<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">Find out more</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Switzerland<i class="material-icons right">close</i></span>
+              <p>Brief information about Switzerland that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+        <div class="col s12 m6 l6">
+          <div class="card">
+            <div class="card-panel hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="NZ.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">New Zealand<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">Find out more</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">New Zealand<i class="material-icons right">close</i></span>
+              <p>Brief information about New Zealand that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Tourguider</h5>
+                <p class="grey-text text-lighten-4">Any questions? Comments? Suggestions? Feel free to tell us!</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contact Us</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Number</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Email</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 All rights reserved
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+         
     </body>
-    
-    <!-- HERE IS THE JAVASCRIPT TO CONNECT TO YOUR FIREBASE -->
+
     <script>
-        // Your web app's Firebase configuration
+
+        userId = ""
         var config = {
             apiKey: "AIzaSyAgxg8C3PTR-XOzOZdpyMGQVq9IBugOA3g",
             authDomain: "basic-d3556.firebaseapp.com",
@@ -67,52 +196,30 @@
             measurementId: "G-62WRTET4D4"
           };
         firebase.initializeApp(config);
-               
-        // Check to see if you are logged in
+        
         firebase.auth().onAuthStateChanged(function(user) {
             if (user == null) {
-                document.getElementById("uid").innerHTML = "not logged in";
                 return;
             } else {
-                userId = user.displayName; // you can also get .displayName, .photoURL, .email
-                document.getElementById("uid").innerHTML = userId; // display Google uid on page
+                userId = user.uid; // you can also get .displayName, .photoURL, .email
                 
             } // end user null check
         }); // end check auth state
         
-       // HERE IS THE FUNCTION TO SHOW HOW TO GET USER DATA
-       function getData() {
-           var userId = document.getElementById("uid").innerHTML;
-           firebase.database().ref('/tweets/' + userId).once('value', function(snapshot) {
-               console.log(snapshot.val());
-           });
-
-       }
-       
-       // HERE IS THE FUNCTION TO SHOW HOW TO SET/OVERWRITE USER DATA
-       function setData() {
-           var userId = document.getElementById("uid").innerHTML;
-           var js_time = Date.now();
-           firebase.database().ref('/tweets/' + userId).set({tweet:"Set over-writes", time: js_time}); 
-       }
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+        });
         
-       // HERE IS THE FUNCTION TO SHOW HOW TO SET/OVERWRITE USER DATA
-       function updateData() {
-           var userId = document.getElementById("uid").innerHTML;
-           firebase.database().ref('/tweets/' + userId).update({tweet:"Update replaces data, but will leave non replaced data as is"}); 
-       }
-         
-        // HERE IS THE FUNCTION TO SHOW HOW TO PUSH/ADD NEW USER DATA TO EXISTING DATABASE
-        function pushData() {
-            var userId = document.getElementById("uid").innerHTML;
-            var js_time = Date.now();
-            var tweetid = firebase.database().ref('tweets/' + userId + "/").push({tweet: "push adds to the nodes, a unique key/timestamp is also added", time: js_time});
-        }
-
-        // HERE IS THE FUNCTION TO SHOW HOW TO REMOVE USER DATA FROM EXISTING DATABASE - BE CAREFUL!
-        function removeData() {
-            var tweetid = firebase.database().ref('tweets/' + userId + "/").remove();
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems);
+        });
+        
+          document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+  });
         
         function signin() {
             var provider = new firebase.auth.GoogleAuthProvider();
@@ -120,5 +227,22 @@
                 window.location.replace("fbtest.html");
             });
         }
+        
+        function getData() {
+           firebase.database().ref('/messages/' + userId).once('value', function(snapshot) {
+               data = snapshot.val();
+               myvals = Object.values(data);
+               myhtml = "";
+               for (i=0;i<myvals.length;i++){
+                  mydate = new Date(myvals[i]['timestamp']);
+                  myhtml = myhtml + myvals[i]['content'] + "" + mydate + "<br>";
+               }
+               
+               document.getElementById("stuff").innerHTML = myhtml;
+           });
+
+       }
+        
     </script>
+
 </html>
